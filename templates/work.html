@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block menu %}
+    <li class="menu-item"><a class="smoothScroll" href="/index/" title="About"><i class="icon-user"></i></a></li>
+	<li class="menu-item"><a class="smoothScroll" href="/education/" title="Education"><i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li>
+	<li class="menu-item"><a class="smoothScroll" href="#resume" title="Works"><i class="icon-briefcase"></i></a></li>
+	<li class="menu-item"><a class="smoothScroll" href="#contact" title="Contact"><i class="icon-envelope"></i></a></li>
+{% endblock %}
+{% block content %}
+
+	<div id="wrkheaderwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-12">
+					<h1 style="margin-top: 18%">Work</h1>
+				</div><!--/.col-lg-12 -->
+			</div><!--/.row -->
+		</div><!--/.container -->
+	</div><!--/.#headerwrap -->
+
+	<section id="resume" name="resume"></section>
+	<div class="container desc">
+			<div class="row">
+					<div class="col-lg-2 col-lg-offset-1">
+						<h5>WORK</h5>
+					</div>
+                {% if not work_view.0 %}
+                   <div class="col-lg-6">
+                            <p><img class="img-responsive" src="/static/img/port01.jpg" alt=""></p>
+                        </div>
+                    <p>I HAVE NOT WORKED ANYWHERE ELSE</p>
+                {% else %}
+                    {% for work in work_view %}
+                            {% if work == work_view.0 %}
+                            <div class="col-lg-6">
+                                <p><t>{{ work.position }}</t><br/>
+                                    <img src="{{ work.img }}" class="img-circle" alt="Prof-Realty"> <a href="/company/{{ work.company_id }}/" id="worklinks">{{ work.company }}</a> <br/>
+                                </p>
+                                <p><more>{{ work.text|safe }}</more></p>
+                            </div>
+                            <div class="col-lg-3">
+                                <p><sm>{{ work.date }}</sm></p>
+                            </div>
+                        {% else %}
+                            <div class="col-lg-6 col-lg-offset-3">
+                                <p><t>{{ work.position }}</t><br/>
+                                    <img src="{{ work.img }}" class="img-circle" alt="2gis logo"> <a href="/company/{{ work.company_id }}/" id="worklinks">{{ work.company }}</a><br/>
+                                </p>
+                                <p><more>{{ work.text|safe }}</more></p>
+                            </div>
+                            <div class="col-lg-3">
+                                <p><sm>{{ work.date }}</sm></p>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                {% endif %}
+			</div><!--/.row -->
+			<br>
+		</div><!--/.container -->
+{% endblock %}
+
+
+
+

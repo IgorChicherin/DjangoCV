@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block menu %}
+    <li class="menu-item"><a class="smoothScroll" href="/index/" title="About"><i class="icon-user"></i></a></li>
+	<li class="menu-item"><a class="smoothScroll" href="#resume" title="Education"><i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li>
+	<li class="menu-item"><a class="smoothScroll" href="/work" title="Works"><i class="icon-briefcase"></i></a></li>
+	<li class="menu-item"><a class="smoothScroll" href="#contact" title="Contact"><i class="icon-envelope"></i></a></li>
+{% endblock %}
+{% block content %}
+    <div id="eduheaderwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-12">
+					<h1 style="margin-top: 23%">Education</h1>
+				</div><!--/.col-lg-12 -->
+			</div><!--/.row -->
+		</div><!--/.container -->
+	</div><!--/.#headerwrap -->
+	<section id="resume" name="resume"></section>
+	<!--EDUCATION DESCRIPTION -->
+	<div class="container desc">
+		<div class="row">
+
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5>EDUCATION</h5>
+				</div>
+				<div class="col-lg-6">
+					<p><t><a href="http://www.osu.ru/" style="color: #34495e">OSU (Orenburg State University)</a></t><br/>
+						Engineer - Progammer <br/>
+						<i></i>
+					</p>
+				</div>
+		        <div class="col-lg-3">
+					<p><sm>FEBRUARY 2013</sm></p>
+				</div>
+				<div class="col-lg-6 col-lg-offset-3">
+					<p><t><a href="http://uc.osu.ru/" style="color: #34495e">COSU (College of Orenburg State University)</a></t><br/>
+						 Technician - Programmer <br/>
+					</p>
+				</div>
+				<div class="col-lg-3">
+					<p><sm>JULY 2010</sm></p>
+				</div>
+	
+		</div><!--/.row -->
+		<br>
+		<hr>
+	</div><!--/.container -->
+		
+		</div><!--/.row -->
+		<br>
+	</div><!--/.container -->
+
+	<section id="work" name="work"></section>
+	<!--PORTFOLIO DESCRIPTION -->
+	<div class="container desc">
+		<div class="row">
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5>COURSES</h5>
+				</div>
+                {% if not education_view.0 %}
+                   <div class="col-lg-6">
+                            <p><img class="img-responsive" src="/static/img/port01.jpg" alt=""></p>
+                        </div>
+                    <p>I HAVE NOT COURSES YET</p>
+                {% else %}
+                    {% for cert in education_view %}
+                        {% if cert == education_view.0 %}
+                            <div class="col-lg-6">
+                                <p><img class="img-responsive" src="{{ cert.img }}" alt=""></p>
+                            </div>
+                            <div class="col-lg-3">
+                                <p>{{ cert.course }}</p>
+                            <p><more>{{ cert.text|safe }}<br/><br/>
+                                <sm><i class="icon-tag"></i> {{ cert.tag }}</sm></more>
+                            </p>
+                            </div>
+                        {% else %}
+                            <div class="col-lg-6 col-lg-offset-3">
+                                <p><img class="img-responsive" src="{{ cert.img }}" alt=""></p>
+                            </div>
+                            <div class="col-lg-3">
+                                    <p>{{ cert.course }}</p>
+                                <p><more>{{ cert.text|safe }}<br/><br/>
+                                    <sm><i class="icon-tag"></i> {{ cert.tag }}</sm></more>
+                                </p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+		        {% endif %}
+		</div><!--/.row -->
+		<br>
+		<br>
+	</div><!--/.container -->
+    {% endblock %}
