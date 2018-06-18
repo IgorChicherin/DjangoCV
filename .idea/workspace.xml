@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="153ce3ce-5f04-4a0a-bcf8-b4226994c738" name="Default" comment="">
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/myblog/migrations/0002_auto_20180618_1017.py" />
       <change beforePath="$PROJECT_DIR$/data/data.csv" afterPath="$PROJECT_DIR$/data/data.csv" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change beforePath="$PROJECT_DIR$/les01/settings.py" afterPath="$PROJECT_DIR$/les01/settings.py" />
-      <change beforePath="$PROJECT_DIR$/myblog/models.py" afterPath="$PROJECT_DIR$/myblog/models.py" />
       <change beforePath="$PROJECT_DIR$/myblog/views.py" afterPath="$PROJECT_DIR$/myblog/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -249,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529308435920</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="models imagefields added">
+      <created>1529308480633</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1529308480633</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -287,7 +291,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="requirements added" />
-    <option name="LAST_COMMIT_MESSAGE" value="requirements added" />
+    <MESSAGE value="models imagefields added" />
+    <option name="LAST_COMMIT_MESSAGE" value="models imagefields added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

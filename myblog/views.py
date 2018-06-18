@@ -15,7 +15,7 @@ def education_view(request):
 
 
 def work_view(request):
-    works = Work.objects.all()
+    works = Work.objects.all().order_by('-id')
     return render_to_response('work.html', {'work_view': works})
 
 
