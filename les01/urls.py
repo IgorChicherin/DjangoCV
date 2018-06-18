@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from myblog.views import index_view, education_view, work_view, company_view
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,3 +28,6 @@ urlpatterns = [
     url(r'^work/$', work_view),
     url(r'^company/([0-9]+)/$', company_view, name='_id' ),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

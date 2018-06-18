@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!$m_f7p16egc+3b9!8@i3tq)#bzj!&bivjn-!_h&5g*0ik5bxh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['ashzak.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myblog.apps.MyblogConfig'
+    'myblog.apps.MyblogConfig',
+    'easy_thumbnails'
 ]
 
 MIDDLEWARE = [
@@ -119,12 +119,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-#STATIC_ROOT = '/static/'
+# STATIC_ROOT = '/static/'
 
 DATA_ROOT = os.path.join(BASE_DIR, 'data')
 
 STATIC_URL = '/static/'
 
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
