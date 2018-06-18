@@ -1,10 +1,11 @@
 from django.db import models
 
 
+
 # Create your models here.
 
 class Portfolio(models.Model):
-    img = models.CharField(max_length=150)
+    img = models.ImageField(upload_to='static/img', null=True, )
     work_name = models.CharField(max_length=100)
     link = models.URLField(max_length=250, null=True)
     text = models.TextField()
@@ -15,7 +16,7 @@ class Portfolio(models.Model):
 
 
 class Education(models.Model):
-    img = models.CharField(max_length=150)
+    img = models.ImageField(upload_to='static/img')
     course = models.CharField(max_length=100)
     text = models.TextField()
     tag = models.TextField(max_length=50)
@@ -36,7 +37,7 @@ class Company(models.Model):
 
 class Work(models.Model):
     position = models.CharField(max_length=100)
-    img = models.CharField(max_length=150)
+    img = models.ImageField(upload_to='static/img')
     company = models.ForeignKey(Company, null=True)
     link = models.URLField(max_length=250)
     text = models.TextField()
