@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load thumbnail %}
 {% block menu %}
     <li class="menu-item"><a class="smoothScroll" href="/index/" title="About"><i class="icon-user"></i></a></li>
 	<li class="menu-item"><a class="smoothScroll" href="/education/" title="Education"><i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li>
@@ -33,7 +34,7 @@
                             {% if work == work_view.0 %}
                             <div class="col-lg-6">
                                 <p><t>{{ work.position }}</t><br/>
-                                    <img src="{{ work.img }}" class="img-circle" alt="Prof-Realty"> <a href="/company/{{ work.company_id }}/" id="worklinks">{{ work.company }}</a> <br/>
+                                    <img src="{% thumbnail work.img 200x200 crop upscale %}" class="img-circle" alt="Prof-Realty"> <a href="/company/{{ work.company_id }}/" id="worklinks">{{ work.company }}</a> <br/>
                                 </p>
                                 <p><more>{{ work.text|safe }}</more></p>
                             </div>
@@ -43,7 +44,7 @@
                         {% else %}
                             <div class="col-lg-6 col-lg-offset-3">
                                 <p><t>{{ work.position }}</t><br/>
-                                    <img src="{{ work.img }}" class="img-circle" alt="2gis logo"> <a href="/company/{{ work.company_id }}/" id="worklinks">{{ work.company }}</a><br/>
+                                    <img src="{% thumbnail work.img 200x200 crop upscale %}" class="img-circle" alt="2gis logo"> <a href="/company/{{ work.company_id }}/" id="worklinks">{{ work.company }}</a><br/>
                                 </p>
                                 <p><more>{{ work.text|safe }}</more></p>
                             </div>

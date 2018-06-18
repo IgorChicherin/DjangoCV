@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load thumbnail static %}
 {% block menu %}
     <li class="menu-item"><a class="smoothScroll" href="#about" title="About"><i class="icon-user"></i></a></li>
 	<li class="menu-item"><a class="smoothScroll" href="/education" title="Education"><i class="fa fa-graduation-cap" aria-hidden="true"></i></a></li>
@@ -28,7 +29,7 @@
 					<p style="color: #555">I'm system administrator with 4 years of professional experience. I'm interested web sites and front-end develop. I also have skills in other fields like system programming or web development.</p>
 				</div>
 				<div class="col-lg-3">
-					<a href="/static/Chicherin%20Igor.pdf" download=""><p style="color: #555"><i class="icon-file"></i><sm>DOWNLOAD PDF</sm></p></a>
+					<a href="{% static 'Chicherin Igor.pdf' %}" download=""><p style="color: #555"><i class="icon-file"></i><sm>DOWNLOAD PDF</sm></p></a>
 				</div>
 				
 			</div><!--/.row -->
@@ -175,7 +176,7 @@
                     {% for work in index_view %}
                         {% if work == index_view.0 %}
                         <div class="col-lg-6">
-                            <p><img class="img-responsive" src="{{ work.img }}" alt=""></p>
+                            <p><img class="img-responsive" src="{% thumbnail work.img 931x698 crop upscale %}" alt=""></p>
                         </div>
                         <div class="col-lg-3">
                             <p><a href="{{ work.link }}" id="worklinks">{{ work.work_name }}</a></p>
@@ -185,7 +186,7 @@
                         </div>
                         {% else %}
                             <div class="col-lg-6 col-lg-offset-3">
-                                <p><img class="img-responsive" src="{{ work.img }}" alt=""></p>
+                                <p><img class="img-responsive" src="{% thumbnail work.img 931x698 crop upscale %}" alt=""></p>
                             </div>
                             <div class="col-lg-3">
                                  <p><a href="{{ work.link }}" id="worklinks">{{ work.work_name }}</a></p>
